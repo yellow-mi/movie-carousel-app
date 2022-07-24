@@ -27,58 +27,23 @@ class Home extends Component {
     }));
   };
 
-  getDocMovies = (result) => {
-    this.setState({
-      docMovies: result,
-    })
-  }
-  getDramaMovies = (result) => {
-    this.setState({
-      dramaMovies: result,
-    })
-  }
-
-  getHorrorMovies = (result) => {
-    this.setState({
-      horrorMovies: result,
-    })
-  }
-
-   docMoviesRequest = async () => {
-    const url = 'http://www.omdbapi.com/?s=Documentary&apikey=a7b772d2'
-
-    const response = await fetch(url);
-    const responseJson = await response.json();
-
-    this.getDocMovies(responseJson.Search)
-  }
-
-  dramaMoviesRequest = async () => {
-    const url = 'http://www.omdbapi.com/?s=Drama&apikey=a7b772d2'
-
-    const response = await fetch(url);
-    const responseJson = await response.json();
-
-    this.getDramaMovies(responseJson.Search)
-  }
-
-  horrorMoviesRequest = async () => {
-    const url = 'http://www.omdbapi.com/?s=Comedy&apikey=a7b772d2'
-
-    const response = await fetch(url);
-    const responseJson = await response.json();
-
-    this.getHorrorMovies(responseJson.Search)
-  }
-
   componentDidMount() {
-    this.docMoviesRequest()
-    this.dramaMoviesRequest()
-    this.horrorMoviesRequest()
+    fetch("http://www.omdbapi.com/?s=Horror&apikey=a7b772d2")
+      .then((response) => response.json())
+      .then((data) => this.setState({ horrorMovies: data.Search }));
+
+    fetch("http://www.omdbapi.com/?s=Drama&apikey=a7b772d2")
+      .then((response) => response.json())
+      .then((data) => this.setState({ dramaMovies: data.Search }));
+
+    fetch("http://www.omdbapi.com/?s=Documentary&apikey=a7b772d2")
+      .then((response) => response.json())
+      .then((data) => this.setState({ docMovies: data.Search }));
   }
 
   render() {
-    const { horrorMovies, docMovies, dramaMovies, firstIndex, lastIndex } = this.state;
+    const { horrorMovies, docMovies, dramaMovies, firstIndex, lastIndex } =
+      this.state;
 
     return (
       <div className="home">

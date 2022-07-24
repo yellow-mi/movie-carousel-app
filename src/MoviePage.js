@@ -25,7 +25,7 @@ class MoviePage extends Component {
     // this.movieRequest();
 
     fetch(
-      `http://www.omdbapi.com/?i=${match.params.id}`
+      `http://www.omdbapi.com/?i=${match.params.id}&apikey=a7b772d2`
     ).then(response => response.json()).then(data => this.setState({ movie: data }))
   }
 
