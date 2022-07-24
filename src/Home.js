@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CarouselContainer from "./CarouselContainer";
+import FavouritesPage from "./FavouritesPage";
 import Header from "./Header";
 
 class Home extends Component {
@@ -9,6 +10,7 @@ class Home extends Component {
     docMovies: [],
     dramaMovies: [],
     horrorMovies: [],
+    wishList: [],
   };
 
   setPrev = () => {
@@ -27,6 +29,12 @@ class Home extends Component {
     }));
   };
 
+  addWishList = (movie) => {
+    this.setState((prevState) => ({
+      wishList: [...this.prevState.wishList, movie]
+    }));
+  };
+
   componentDidMount() {
     fetch("http://www.omdbapi.com/?s=Horror&apikey=a7b772d2")
       .then((response) => response.json())
@@ -42,13 +50,14 @@ class Home extends Component {
   }
 
   render() {
-    const { horrorMovies, docMovies, dramaMovies, firstIndex, lastIndex } =
+    const { horrorMovies, docMovies, dramaMovies, firstIndex, lastIndex, wishList } =
       this.state;
 
     return (
       <div className="home">
         <Header />
         <CarouselContainer
+          addWishList={this.addWishList}
           firstIndex={firstIndex}
           items={docMovies}
           genre="Documentaries"
@@ -57,6 +66,7 @@ class Home extends Component {
           setNext={this.setNext}
         />
         <CarouselContainer
+          addWishList={this.addWishList}
           firstIndex={firstIndex}
           genre="Drama"
           items={dramaMovies}
@@ -65,6 +75,7 @@ class Home extends Component {
           setNext={this.setNext}
         />
         <CarouselContainer
+          addWishList={this.addWishList}
           firstIndex={firstIndex}
           genre="Horror"
           items={horrorMovies}
@@ -72,6 +83,7 @@ class Home extends Component {
           setPrev={this.setPrev}
           setNext={this.setNext}
         />
+        <FavouritesPage addWishList={this.addWishList} wishList={wishList} />
       </div>
     );
   }

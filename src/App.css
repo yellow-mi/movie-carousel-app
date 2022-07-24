@@ -1,11 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
 .App {
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-align: center;
-  background-color: #141414;
-  color: #ffffff;
+  /* background-color: #1b1a1a; */
+  background-color: #fefefe;
+  color: #1b1a1a;
   padding: 10px;
   margin: 10px;
   position: relative;
+}
+a {
+  text-decoration: none;
+  color: #1b1a1a;
+  margin-right: 15px;
+}
+
+hr {
+  border-style: hidden;
+  background-color: #E50914;
+  height: 2px;
 }
 
 .home {
@@ -21,28 +35,58 @@
 
 .btn {
   margin: 50px 5px 5px 0; 
-  border: 1px solid rgba(0,0,0,.29);
-  border-radius: 3px;
-  cursor: pointer;
   background: #fff;
+  border: 1px solid rgba(0,0,0,.29);
+  border-radius: 5px;
+  cursor: pointer;
   font-size: 16px;
-  width: 150px;
+  width: 50px;
   position: relative;
+}
+
+.btn-2 {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.29);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  /* width: 100px; */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .carousel-container {
   display: flex;
-  overflow: hidden;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
   height: 500px;
+  overflow: hidden;
 }
 
 .container-item {
   height: 100%;
   margin: auto;
+}
+
+  .heart-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+.icon {
+  align-items: center;
+  color: #E50914;
+  display: flex;
+  font-size: 25px;
+  margin-right: 10px;
 }
 
 .item {
@@ -55,11 +99,22 @@
   text-align: left;
 }
 
-.visible {
-  visibility: visible;
-  width: 300px;
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
 }
 
-.hidden {
-  visibility: hidden;
+.nav ul li {
+  list-style-type: none;
+}
+
+.nav li:first-child {
+  padding-left: 0;
+}
+
+.visible {
+  width: 300px;
+  height: 80%;
 }

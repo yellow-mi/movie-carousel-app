@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { TiHeartFullOutline } from 'react-icons/ti';
 import "./App.css";
 
 class Carousel extends Component {
   render() {
-    const { firstIndex, genre, lastIndex, items, setPrev, setNext } =
+    const { addWishList, firstIndex, genre, lastIndex, items, setPrev, setNext } =
       this.props;
 
     return (
@@ -21,9 +22,15 @@ class Carousel extends Component {
                     src={item.Poster}
                     className="visible"
                   />
-                  <Link to={`/movie/${item.imdbID}`}>
-                    <h3>{item.Title}</h3>
-                  </Link>
+                  <h3>{item.Title}</h3>
+                  <div className="container">
+                    <button className="heart-button" onClick={(e) => addWishList()}>
+                    <TiHeartFullOutline className="icon" />
+                    </button>
+                    <Link to={`/movie/${item.imdbID}`}>
+                      <button className="btn-2">info</button>
+                    </Link>
+                  </div>
                 </div>
               );
             } else {
