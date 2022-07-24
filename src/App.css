@@ -1,38 +1,65 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
+  background-color: #141414;
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home {
+  margin-left: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin: 50px 5px 5px 0; 
+  border: 1px solid rgba(0,0,0,.29);
+  border-radius: 3px;
+  cursor: pointer;
+  background: #fff;
+  font-size: 16px;
+  width: 150px;
+  position: relative;
+}
+
+.carousel-container {
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  height: 500px;
+}
+
+.container-item {
+  height: 100%;
+  margin: auto;
+}
+
+.item {
+  margin-right: 10px;
+  background: grey;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.left {
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.visible {
+  visibility: visible;
+  width: 300px;
+}
+
+.hidden {
+  visibility: hidden;
 }
