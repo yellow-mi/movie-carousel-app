@@ -7,8 +7,6 @@ class Carousel extends Component {
     const { firstIndex, genre, lastIndex, items, setPrev, setNext } =
       this.props;
 
-      const id = this.props.items.imdb
-
     return (
       <div>
         <h2 className="left">{genre}</h2>
@@ -16,14 +14,14 @@ class Carousel extends Component {
           {items.map((item, i) => {
             if (i >= firstIndex && i < lastIndex) {
               return (
-                <div className="container-item">
+                <div className="container-item" key={item.imdbId}>
                   <img
                     alt={item.Title}
                     key={item.id}
                     src={item.Poster}
                     className="visible"
                   />
-                  <Link to={`/movie/%{id}`}>
+                  <Link to={`/movie/${item.imdbID}`}>
                     <h3>{item.Title}</h3>
                   </Link>
                 </div>

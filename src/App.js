@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie/:imdbId" element={<MoviePage />} />
+          <Route path="/movie/:id" element={<MoviePage />} />
         </Routes>
       </BrowserRouter>
     </div>
