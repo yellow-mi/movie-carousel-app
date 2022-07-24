@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Header() {
   return (
     <div>
-      <h1>Movie-Carousel App</h1>
+      <h1>Movie Carousel App</h1>
     <nav className="nav">
       <ul>
         <li>
