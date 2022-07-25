@@ -50,13 +50,15 @@ class Carousel extends Component {
                     alt={movie.Title}
                     key={movie.id}
                     src={movie.Poster}
-                    className="visible"
+                    className="img-card"
                   />
                   <h3>{movie.Title}</h3>
                   <div className="container">
-                    <button className="heart-button" onClick={(e) => addWishList()}>
+                    <Link to="/wish-list">
+                    <button className="heart-button" onClick={() => addWishList(movie)}>
                     <TiHeartFullOutline className="icon" />
                     </button>
+                    </Link>
                     <Link to={`/movie/${movie.imdbID}`}>
                       <button className="btn-2">Info</button>
                     </Link>

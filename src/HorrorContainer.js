@@ -27,7 +27,7 @@ class Carousel extends Component {
   };
   
   componentDidMount() {
-    fetch("http://www.omdbapi.com/?s=Drama&apikey=a7b772d2")
+    fetch("http://www.omdbapi.com/?s=Horror&apikey=a7b772d2")
     .then((response) => response.json())
     .then((data) => this.setState({ horrorMovies: data.Search }));
   }
@@ -48,13 +48,12 @@ class Carousel extends Component {
                 <div className="container-movie" key={movie.imdbId}>
                   <img
                     alt={movie.Title}
-                    key={movie.id}
                     src={movie.Poster}
-                    className="visible"
+                    className="img-card"
                   />
                   <h3>{movie.Title}</h3>
                   <div className="container">
-                    <button className="heart-button" onClick={(e) => addWishList()}>
+                    <button className="heart-button" onClick={() => addWishList(movie)}>
                     <TiHeartFullOutline className="icon" />
                     </button>
                     <Link to={`/movie/${movie.imdbID}`}>

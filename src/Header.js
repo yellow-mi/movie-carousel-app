@@ -12,11 +12,6 @@ export default function Header() {
             Home
           </Link>
         </li>
-        <li>
-          <Link to="/wish-list">
-            Wish List
-          </Link>
-        </li>
       </ul>
     </nav>
     <hr className="line-color"></hr>

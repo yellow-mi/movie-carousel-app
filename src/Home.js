@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DocContainer from "./DocContainer";
 import DramaContainer from "./DramaContainer";
 import HorrorContainer from "./HorrorContainer";
-import FavouritesPage from "./FavouritesPage";
+import WishList from "./WishList";
 import Header from "./Header";
 
 class Home extends Component {
@@ -36,7 +36,6 @@ class Home extends Component {
 
     return (
       <div className="home">
-        <Header />
         <DocContainer
           addWishList={this.addWishList}
           genre="Documentaries"
@@ -49,7 +48,7 @@ class Home extends Component {
           addWishList={this.addWishList}
           genre="Horror"
         />
-        <FavouritesPage addWishList={this.addWishList} wishList={wishList} />
+        <WishList wishList={wishList} />
       </div>
     );
   }
