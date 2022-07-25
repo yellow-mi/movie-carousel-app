@@ -1,20 +1,15 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import popcorn from "./img/popcorn.png";
 
 export default function Header() {
   return (
     <div>
+      <Link to="/">
+      <img alt="popcorn" src={popcorn} className="logo" />
+      </Link>
       <h1>Movie Carousel App</h1>
-    <nav className="nav">
-      <ul>
-        <li>
-          <Link to="/">
-            Home
-          </Link>
-        </li>
-      </ul>
-    </nav>
-    <hr className="line-color"></hr>
+      <hr className="line-color"></hr>
     </div>
   );
 }
