@@ -58,7 +58,7 @@ class Carousel extends Component {
                     <TiHeartFullOutline className="icon" />
                     </button>
                     <Link to={`/movie/${item.imdbID}`}>
-                      <button className="btn-2">info</button>
+                      <button className="btn-2">Info</button>
                     </Link>
                   </div>
                 </div>

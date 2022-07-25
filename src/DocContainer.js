@@ -33,7 +33,7 @@ class Carousel extends Component {
   }
   
   render() {
-    const { addWishList, genre, } =
+    const { addWishList, genre } =
       this.props;
 
     const { docMovies, firstIndex, lastIndex } = this.state
@@ -45,20 +45,20 @@ class Carousel extends Component {
           {docMovies.map((item, i) => {
             if (i >= firstIndex && i < lastIndex) {
               return (
-                <div className="container-item" key={item.imdbId}>
+                <div className="container-item" key={item.imdbID}>
                   <img
                     alt={item.Title}
                     key={item.id}
                     src={item.Poster}
                     className="visible"
-                  />
+                    />
                   <h3>{item.Title}</h3>
                   <div className="container">
                     <button className="heart-button" onClick={(e) => addWishList()}>
                     <TiHeartFullOutline className="icon" />
                     </button>
                     <Link to={`/movie/${item.imdbID}`}>
-                      <button className="btn-2">info</button>
+                      <button className="btn-2">Info</button>
                     </Link>
                   </div>
                 </div>

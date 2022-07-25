@@ -13,7 +13,10 @@ class Home extends Component {
 
   addWishList = (movie) => {
     this.setState((prevState) => ({
-      wishList: [...this.prevState.wishList, movie]
+      wishList: [
+        ...prevState.wishList,
+        movie
+      ]
     }));
   };
 
