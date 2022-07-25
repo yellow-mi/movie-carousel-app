@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./App.css";
+
 class MoviePage extends Component {
   state = {
     movie: [],
@@ -17,34 +19,41 @@ class MoviePage extends Component {
   }
 
   chooseStyle = () => {
-    const title = this.state.Title
+    const title = this.state.Title;
 
-    if(title.includes("drama")) {
+    if (title.includes("drama")) {
       this.setState({
-        styleForType: "drama"
-      })
-    } else if(title.includes("documentary")) {
+        styleForType: "drama",
+      });
+    } else if (title.includes("documentary")) {
       this.setState({
-        styleForType: "documentary"
-      })
+        styleForType: "documentary",
+      });
     } else {
       this.setState({
-        styleForType: "horror"
-      })
+        styleForType: "horror",
+      });
     }
-  }
+  };
 
   render() {
     const { movie } = this.state;
-    const whichStyle = this.state.styleForType
-    
+
     return (
-      <div>
-        <h2>{movie.Title}</h2>
-        <img alt={movie.Title} src={movie.Poster}></img>
-        <p>Year: {movie.Year}</p>
-        <p>Time: {movie.Runtime}</p>
-        <p>Actors: {movie.Actors}</p>
+      <div className="movie-page-container">
+        <div>
+          <img alt={movie.Title} className="movie-img" src={movie.Poster}></img>
+        </div>
+        <div>
+          <div className="movie-box-info">
+          <h1>{movie.Title}</h1>
+          <h3>{movie.Plot}</h3>
+          <h3>Year: {movie.Year}</h3>
+          <h3>Time: {movie.Runtime}</h3>
+          <h3>Director: {movie.Director}</h3>
+          <h3>Actors: {movie.Actors}</h3>
+          </div>
+        </div>
       </div>
     );
   }

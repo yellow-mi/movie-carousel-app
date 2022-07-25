@@ -3,7 +3,6 @@ import DocContainer from "./DocContainer";
 import DramaContainer from "./DramaContainer";
 import HorrorContainer from "./HorrorContainer";
 import WishList from "./WishList";
-import Header from "./Header";
 
 class Home extends Component {
   state = {
@@ -36,18 +35,19 @@ class Home extends Component {
 
     return (
       <div className="home">
-        <DocContainer
-          addWishList={this.addWishList}
-          genre="Documentaries"
-        />
         <DramaContainer
           addWishList={this.addWishList}
           genre="Drama"
+        />
+        <DocContainer
+          addWishList={this.addWishList}
+          genre="Documentaries"
         />
         <HorrorContainer
           addWishList={this.addWishList}
           genre="Horror"
         />
+        <hr></hr>
         <WishList wishList={wishList} />
       </div>
     );
