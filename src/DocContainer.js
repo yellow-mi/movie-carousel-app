@@ -8,7 +8,6 @@ class Carousel extends Component {
     firstIndex: 0,
     lastIndex: 5,
     docMovies: [],
-    showDetails: false,
   }
 
   setPrev = () => {
@@ -26,18 +25,11 @@ class Carousel extends Component {
       lastIndex: oldState.lastIndex + 1,
     }));
   };
-
   
   componentDidMount() {
     fetch("http://www.omdbapi.com/?s=Documentary&apikey=a7b772d2")
     .then((response) => response.json())
     .then((data) => this.setState({ docMovies: data.Search }));
-  }
-
-  setShowDetails = () => {
-    this.setState({
-      showDetails: true
-    })
   }
   
   render() {
@@ -59,7 +51,7 @@ class Carousel extends Component {
                     key={movie.id}
                     src={movie.Poster}
                     className="visible"
-                    />
+                  />
                   <h3>{movie.Title}</h3>
                   <div className="container">
                     <button className="heart-button" onClick={(e) => addWishList()}>
@@ -68,9 +60,6 @@ class Carousel extends Component {
                     <Link to={`/movie/${movie.imdbID}`}>
                       <button className="btn-2">Info</button>
                     </Link>
-                    <button className="btn-2">
-                      Info
-                    </button>
                   </div>
                 </div>
               );
