@@ -8,6 +8,7 @@ class Carousel extends Component {
     firstIndex: 0,
     lastIndex: 5,
     docMovies: [],
+    showDetails: false,
   }
 
   setPrev = () => {
@@ -25,11 +26,18 @@ class Carousel extends Component {
       lastIndex: oldState.lastIndex + 1,
     }));
   };
+
   
   componentDidMount() {
     fetch("http://www.omdbapi.com/?s=Documentary&apikey=a7b772d2")
     .then((response) => response.json())
     .then((data) => this.setState({ docMovies: data.Search }));
+  }
+
+  setShowDetails = () => {
+    this.setState({
+      showDetails: true
+    })
   }
   
   render() {
@@ -42,24 +50,27 @@ class Carousel extends Component {
       <div>
         <h2 className="left">{genre}</h2>
         <div className="carousel-container">
-          {docMovies.map((item, i) => {
+          {docMovies.map((movie, i) => {
             if (i >= firstIndex && i < lastIndex) {
               return (
-                <div className="container-item" key={item.imdbID}>
+                <div className="container-movie" key={movie.imdbID}>
                   <img
-                    alt={item.Title}
-                    key={item.id}
-                    src={item.Poster}
+                    alt={movie.Title}
+                    key={movie.id}
+                    src={movie.Poster}
                     className="visible"
                     />
-                  <h3>{item.Title}</h3>
+                  <h3>{movie.Title}</h3>
                   <div className="container">
                     <button className="heart-button" onClick={(e) => addWishList()}>
                     <TiHeartFullOutline className="icon" />
                     </button>
-                    <Link to={`/movie/${item.imdbID}`}>
+                    <Link to={`/movie/${movie.imdbID}`}>
                       <button className="btn-2">Info</button>
                     </Link>
+                    <button className="btn-2">
+                      Info
+                    </button>
                   </div>
                 </div>
               );
