@@ -4,7 +4,7 @@ import "./App.css";
 class MoviePage extends Component {
   state = {
     movie: [],
-    styleForType: null,
+    styleForType: "",
   };
 
   componentDidMount() {
@@ -13,19 +13,22 @@ class MoviePage extends Component {
     fetch(`http://www.omdbapi.com/?apikey=a7b772d2&i=${id}`)
       .then((response) => response.json())
       .then((data) => this.setState({ movie: data }))
+      .then(()=>this.chooseStyle())
       .catch((err) => {
         console.log("error is", err);
       });
+
+    ;
   }
 
   chooseStyle = () => {
-    const title = this.state.Title;
+    const title = this.state.movie.Title;
 
-    if (title.includes("drama")) {
+    if (title.toLowerCase().includes("drama")) {
       this.setState({
         styleForType: "drama",
       });
-    } else if (title.includes("documentary")) {
+    } else if (title.toLowerCase().includes("documentary")) {
       this.setState({
         styleForType: "documentary",
       });
@@ -41,7 +44,7 @@ class MoviePage extends Component {
 
     return (
       <div>
-        <div className="movie-page-container">
+        <div  className={`${this.state.styleForType} movie-page-container`}>
           <div>
             <img
               alt={movie.Title}
@@ -60,7 +63,7 @@ class MoviePage extends Component {
             </div>
           </div>
         </div>
-        <div className="movie-page-container-2">
+        <div className={`${this.state.styleForType} movie-page-container-2`}>
           <div className="movie-box-info">
             <h3>Description:</h3>
             <h4>

@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
 
 .App {
   font-family: 'Raleway', sans-serif;
@@ -146,5 +149,20 @@ hr {
 
 .movie-box-info {
   text-align: left;
+}
+
+.drama {
+  font-family: 'Teko';
+  color: red;
+}
+
+.horror {
+  font-family: 'Roboto Mono';
+  color: blueviolet;
+}
+
+.documentary {
+  font-family: 'Edu NSW ACT Foundation';
+  color:darkgreen ;
 }
 

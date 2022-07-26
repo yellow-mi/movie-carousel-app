@@ -6,7 +6,7 @@ import WishList from "./WishList";
 
 class Home extends Component {
   state = {
-    horrorMovies: [],
+    // horrorMovies: [],
     wishList: [],
   };
 
@@ -19,15 +19,15 @@ class Home extends Component {
     }));
   };
 
-  componentDidMount() {
-    fetch("http://www.omdbapi.com/?s=Horror&apikey=a7b772d2")
-      .then((response) => response.json())
-      .then((data) => this.setState({ horrorMovies: data.Search }));
+  // componentDidMount() {
+  //   fetch("http://www.omdbapi.com/?s=Horror&apikey=a7b772d2")
+  //     .then((response) => response.json())
+  //     .then((data) => this.setState({ horrorMovies: data.Search }));
 
-    fetch("http://www.omdbapi.com/?s=Drama&apikey=a7b772d2")
-      .then((response) => response.json())
-      .then((data) => this.setState({ dramaMovies: data.Search }));
-  }
+  //   fetch("http://www.omdbapi.com/?s=Drama&apikey=a7b772d2")
+  //     .then((response) => response.json())
+  //     .then((data) => this.setState({ dramaMovies: data.Search }));
+  // }
 
   render() {
     const { wishList } =
