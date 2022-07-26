@@ -40,11 +40,11 @@ class MoviePage extends Component {
   };
 
   render() {
-    const { movie } = this.state;
+    const { movie, styleForType } = this.state;
 
     return (
       <div>
-        <div  className={`${this.state.styleForType} movie-page-container`}>
+        <div  className={`${styleForType} movie-page-container`}>
           <div>
             <img
               alt={movie.Title}
@@ -63,7 +63,7 @@ class MoviePage extends Component {
             </div>
           </div>
         </div>
-        <div className={`${this.state.styleForType} movie-page-container-2`}>
+        <div className={`${styleForType} movie-page-container-2`}>
           <div className="movie-box-info">
             <h3>Description:</h3>
             <h4>
