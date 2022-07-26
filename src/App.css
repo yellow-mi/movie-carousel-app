@@ -151,17 +151,20 @@ hr {
   text-align: left;
 }
 
-.drama {
+.movie-page-container-2--drama,
+.movie-page-container--drama {
   font-family: 'Teko';
   color: red;
 }
 
-.horror {
+.movie-page-container--horror,
+.movie-page-container-2--horror {
   font-family: 'Roboto Mono';
   color: blueviolet;
 }
 
-.documentary {
+.movie-page-container--documentary,
+.movie-page-container-2--documentary {
   font-family: 'Edu NSW ACT Foundation';
   color:darkgreen ;
 }
