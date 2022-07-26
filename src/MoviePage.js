@@ -13,7 +13,7 @@ class MoviePage extends Component {
     fetch(`http://www.omdbapi.com/?apikey=a7b772d2&i=${id}`)
       .then((response) => response.json())
       .then((data) => this.setState({ movie: data }))
-      .then(()=>this.chooseStyle())
+      .then(() => this.chooseStyle())
       .catch((err) => {
         console.log("error is", err);
       });
