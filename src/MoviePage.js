@@ -44,7 +44,7 @@ class MoviePage extends Component {
 
     return (
       <div>
-        <div  className={`${styleForType} movie-page-container`}>
+        <div className={`${styleForType} movie-page-container`}>
           <div>
             <img
               alt={movie.Title}
