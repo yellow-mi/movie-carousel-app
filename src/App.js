@@ -6,17 +6,16 @@ import MoviePage from "./MoviePage";
 import Header from "./Header";
 
 function App() {
-
   return (
     <BrowserRouter>
-    <div className="App">
-      <Header />
+      <div className="App">
+        <Header />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/movie/:id" component={MoviePage} />
         </Switch>
-    </div>
-      </BrowserRouter>
+      </div>
+    </BrowserRouter>
   );
 }
 
