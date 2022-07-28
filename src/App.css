@@ -135,7 +135,7 @@ hr {
   /* flex-wrap: wrap; */
 }
 
-.movie-page-container-2 {
+.movie-page-description {
   display: flex;
   justify-content: stretch;
   padding: 0 5em 2.5em 6em;
@@ -152,19 +152,19 @@ hr {
 }
 
 .movie-page-container--drama,
-.movie-page-container-2--drama {
+.movie-page-description--drama {
   font-family: 'Teko';
   color: red;
 }
 
 .movie-page-container--horror,
-.movie-page-container-2--horror {
+.movie-page-description--horror {
   font-family: 'Roboto Mono';
   color: blueviolet;
 }
 
 .movie-page-container--documentary,
-.movie-page-container-2--documentary {
+.movie-page-description--documentary {
   font-family: 'Edu NSW ACT Foundation';
   color:darkgreen;
 }

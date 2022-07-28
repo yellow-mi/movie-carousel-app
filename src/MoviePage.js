@@ -63,7 +63,7 @@ class MoviePage extends Component {
             </div>
           </div>
         </div>
-        <div className={`movie-page-container-2 movie-page-container-2--${styleForType}`}>
+        <div className={`movie-page-description movie-page-description--${styleForType}`}>
           <div className="movie-box-info">
             <h3>Description:</h3>
             <h4>
